@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: credit-transaction-ms
+  cloud:
+    config:
+      uri: http://localhost:8888
