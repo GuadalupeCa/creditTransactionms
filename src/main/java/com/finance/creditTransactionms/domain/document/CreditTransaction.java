@@ -19,14 +19,23 @@ public class CreditTransaction {
     @Id
     private String id;
     private Credit credit;
-    private String account;
     private Double amount;
+    private TypeTransaction typeTransaction;
+
+    private Integer term;
+    private Integer numberFees;
+    private String track;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createAt;
 
-    public CreditTransaction(String account, Double amount, Date createAt) {
-        this.account = account;
+    public CreditTransaction(Credit credit, Double amount, TypeTransaction typeTransaction, Integer term, Integer numberFees, String track, Date createAt) {
+        this.credit = credit;
         this.amount = amount;
+        this.typeTransaction = typeTransaction;
+        this.term = term;
+        this.numberFees = numberFees;
+        this.track = track;
         this.createAt = createAt;
     }
 }

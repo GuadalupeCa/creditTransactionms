@@ -12,10 +12,11 @@ public class Credit {
     private String id;
     private Client client;
     private String account;
+    private Product product;
     private Double interestRate;
-    private Integer term;
-    private Integer numberFees;
     private double balance;
+    private double lineCredit;
+    private double initialLineCredit;
     private String currency;
     private boolean status = true;
 

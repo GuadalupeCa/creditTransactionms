@@ -17,10 +17,10 @@ public class FunctionalRouter {
     @Bean
     public RouterFunction<ServerResponse> route(CreditTransactionHandler creditTransactionHandler) {
         return RouterFunctions
-                .route(GET("/creditTrans").and(accept(MediaType.APPLICATION_JSON)), creditTransactionHandler::findAll)
+                .route(GET("/creditTrans/account/{account}").and(accept(MediaType.APPLICATION_JSON)), creditTransactionHandler::findAll)
                 .andRoute(GET("/creditTrans/{id}").and(accept(MediaType.APPLICATION_JSON)), creditTransactionHandler::findById)
-                .andRoute(POST("/creditTrans/save").and(accept(MediaType.APPLICATION_JSON)), creditTransactionHandler::save)
-                .andRoute(PUT("/creditTrans/update").and(accept(MediaType.APPLICATION_JSON)), creditTransactionHandler::update)
-                .andRoute(DELETE("/creditTrans/delete/{id}").and(accept(MediaType.APPLICATION_JSON)), creditTransactionHandler::deleteById);
+                .andRoute(POST("/creditTrans/saveCharge").and(accept(MediaType.APPLICATION_JSON)), creditTransactionHandler::saveCharge)
+                .andRoute(POST("/creditTrans/savePay").and(accept(MediaType.APPLICATION_JSON)), creditTransactionHandler::savePay);
+
     }
 }

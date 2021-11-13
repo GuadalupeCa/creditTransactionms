@@ -9,6 +9,6 @@ public interface CreditTransactionService {
     Mono<CreditTransaction> findById(String id);
     Mono<CreditTransaction> save(CreditTransaction creditTransaction);
     Mono<Void> deleteById(String id);
-
     Flux<CreditTransaction> findByCreditClientDocumentIdentityNumber(String documentIdentityNumber);
+    Flux<CreditTransaction> findByCreditAccount(String account);
 }

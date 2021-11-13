@@ -10,4 +10,5 @@ public interface CreditTransactionRepository {
     Mono<CreditTransaction> save(CreditTransaction credit);
     Mono<Void> deleteById(String id);
     Flux<CreditTransaction> findByCreditClientDocumentIdentityNumber(String documentIdentityNumber);
+    Flux<CreditTransaction> findByCreditAccount(String account);
 }
